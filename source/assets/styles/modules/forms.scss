@@ -1,0 +1,191 @@
+form {
+	margin-bottom: $spacing*4;
+}
+
+%base-input-styling {
+	border: 0; // remove standard borders
+	display: inline-block;
+	width: 100%;
+	max-width: 25rem;
+	padding: $spacing $spacing/2;
+	margin-bottom: $spacing;
+
+	border: 1px dashed $color-border-dark;
+	border-radius: $radius-base;
+
+	&:focus {
+		
+	}
+
+	&:required {
+		border: 1px solid $color-border-dark;
+	}
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="pass"],
+input[type="number"],
+input[type="email"],
+input[type="date"] {
+	@extend %base-input-styling;
+}
+
+textarea {
+	@extend %base-input-styling;
+	min-height: $spacing*4;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+	margin-right: $spacing/2;
+	margin-bottom: $spacing;
+	
+	& ~ span {
+		//color: lighten($color-font-base, 50%); // Make non-required lighter
+		color: $color-font-base;
+	}
+
+	&:required ~ span {
+		color: $color-font-base;
+	}
+}
+
+
+label {
+	display: block;
+}
+
+
+.form-container {
+	max-width: 45rem;
+}
+
+
+
+
+
+
+
+// Base and advanced form
+// -----------------------------
+
+%base-styling2 {
+	max-width: 100%;
+	border-color: $color-border-light;
+	border-radius: $radius-base/2;
+	padding: $spacing $spacing*2 $spacing $spacing;
+	&:focus {
+		border-color: $color-border-highlight;
+		outline: 0;
+
+	}
+}
+
+	
+input[type="text"],
+input[type="tel"],
+input[type="pass"],
+input[type="number"],
+input[type="email"],
+input[type="date"] {
+	@extend %base-styling2;
+	&.error {
+		border: 1px solid $color-error;
+	}
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+	margin-bottom: $spacing/2;
+
+	&.error {
+		border: 1px solid $color-error;
+	}
+}
+
+textarea {
+	@extend %base-styling2;
+	&.error {
+		border: 1px solid $color-error;
+	}
+}
+
+
+label.error {
+	color: $color-light;
+	font-weight: 700;
+	font-size: 11px;
+	background-color: $color-error;
+	padding: $spacing/4 $spacing/2;
+	position: absolute;
+  z-index: 99;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  width: 70%;
+
+	&:before {
+		position: absolute;
+		top: -10px;
+		left: 50%;
+  	transform: translateX(-50%);
+		content: '';
+		width: 0;
+		height: 0;
+		border-left: 10px solid transparent;
+		border-right: 10px solid transparent;
+		border-bottom: 10px solid $color-error;
+	}
+}
+
+.error-container {
+	position: relative;
+	padding-bottom: $spacing/1.5;
+}
+
+ .error-container label.error,
+ .error-container label.error {
+ 	position: absolute;
+ 	left: 0;
+ 	bottom: $spacing/4;
+ 	transform: translateX(0);
+ 	padding: 0 $spacing/2 0 $spacing;
+	width: 100%;
+	background-color: transparent;
+	color: $color-error;
+	text-align: left;
+
+
+	&:before {
+		@extend %icon-styling;
+		@extend .icon-chevron-up;
+		display: block;
+    top: 50%;
+		left: 0;
+		transform: translateY(-50%);
+		border: 0;
+		background-color: $color-error;
+		color: $color-light;
+		width: $spacing/2;
+		height: $spacing/2;
+		border-radius: 100%;
+	}
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="pass"],
+input[type="number"],
+input[type="email"],
+input[type="date"],
+textarea {
+	&.valid {
+		&:before {
+			@extend %icon-styling;
+			content: '\e67d';
+		}
+	}
+}
+
+

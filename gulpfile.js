@@ -134,13 +134,13 @@ gulp.task('css', function() {
         if(beepbeep) {
           beep();
         }
-        console.log('[sass]'.bold.magenta + ' There was an issue compiling Sass\n'.bold.red);
-        console.log('Error:'.bold + error.message);
+        process.stdout.write('[sass]'.bold.magenta + ' There was an issue compiling Sass\n'.bold.red);
+        process.stdout.write('Error:'.bold + error.message);
         this.emit('end');
     }))
     .pipe(sass({ errLogToConsole: true }))
     .pipe(prefix("last 1 version", "> 1%", "ie 9"))
-    .pipe(gulpif(ugly, minify().on('error', function (error) { console.warn(error.message); })))
+    .pipe(gulpif(ugly, minify().on('error', function (error) { process.stdout.write(error.message); })))
     .pipe(gulp.dest(BUILD + STYLES))
     .pipe(gulpif(isPrototype,  browserSync.reload({stream: true}) ) ); 
 });
@@ -151,14 +151,14 @@ gulp.task('js', function() {
   var FILES = [ 
     BOWER + 'jquery/dist/jquery.js',
     BOWER + 'fitvids/jquery.fitvids.js',
-    BOWER + 'jquery-validation/dist/jquery-validate.js',
+    BOWER + 'jquery-validation/dist/jquery.validate.js',
     SOURCE + JS + 'globals/*.js',
     SOURCE + JS + 'libraries/*.js',
     SOURCE + JS +  '*.js'
   ];
   
   gulp.src(FILES)
-    .pipe(gulpif(ugly, uglify().on('error', function (error) { console.warn(error.message); })))
+    .pipe(gulpif(ugly, uglify().on('error', function (error) { process.stdout.write(error.message); })))
     .pipe(gulpif(!console, stripDebug()))
     .pipe(gulpif(!console, replace({regex:'^((?!function)consoleLog)\\(*.+\\);', replace:''}))) // remove consoleLog() but not def: function consoleLog()
     .pipe(concat('main.js'))
@@ -175,7 +175,7 @@ gulp.task('jade', function() {
         if(beepbeep) {
           beep();
         }
-        console.log('[jade]'.bold.tomato + ' There was an issue compiling Sass\n'.bold.red);
+        process.stdout.write('[jade]'.bold.tomato + ' There was an issue compiling Sass\n'.bold.red);
         this.emit('end');
     }))
     .pipe(gulp.dest(BUILD) )

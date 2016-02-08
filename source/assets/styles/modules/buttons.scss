@@ -1,0 +1,21 @@
+%button-base {
+	display: inline-block;
+	padding: $spacing/2;
+	border: 0;
+	margin-bottom: $spacing;
+}
+
+.button {
+	@extend %button-base;
+}
+
+.button--primary {
+	text-transform: uppercase;
+	font-weight: 700;
+	background-color: $color-primary;
+	color: $color-light;
+}
+
+.button--wide {
+	width: 100%;
+}

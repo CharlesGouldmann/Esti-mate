@@ -1,18 +1,42 @@
 extends layout/layout
 block content
 	.container
-	  h1 esti-mate
-	  h2 Helps you estimate your projects.
+		h1 esti-mate
+		h2 Helps you estimate your projects.
 
-	  .grid-group.js-esti-mate
-			.grid.size-12
-	  		input(type="text" placeholder="Best-case estimate")
-	  	.grid.size-12
-	  		input(type="text" placeholder="Most likely estimate")	
-	  	.grid.size-12
-	  		input(type="text" placeholder="Worst-case estimate")	
-	  	.grid.size-12
-	  		input(type="text" placeholder="Estimated amount of deploys")
-			.grid.size-12
-	  		input(type="text" placeholder="Avarage deploy time")
+		.grid-group
+			.form-container
+				form.grid.size-6.js-esti-mate.js-base-validation(name="estimate-form")
+					.grid-group
+						.grid.size-12
+							.float.js-float
+								label.float__label Best-case estimate in hours
+								input.float__input(type="text" name="bestcase" placeholder="Best-case estimate in hours" required)
+						.grid.size-12
+							.float.js-float
+								label.float__label Most likely estimate in hours
+								input.float__input(type="text" name="mostlikely" placeholder="Most likely estimate in hours" required)
+						.grid.size-12
+							.float.js-float
+								label.float__label Worst-case estimate in hours
+								input.float__input(type="text" name="worstcase" placeholder="Worst-case estimate in hours" required)
+						.grid.size-12
+							.float.js-float
+								label.float__label Estimated amount of deploys (optional)
+								input.float__input(type="text" name="deploys" placeholder="Estimated amount of deploys (optional)")
+						.grid.size-12
+							.float.js-float
+								label.float__label Avarage deploy time (optional)
+								input.float__input(type="text" name="deployavg" placeholder="Avarage deploy time (optional)")
+						.grid.size-12
+							button.button.js-esti-mate-submit Give it to me
+
+			.grid.size-6.js-esti-mate-result
+				h4 Estimate without deviation: 
+				.js-result-no-deviation
+				h4 Estimate with 90% accuracy
+				.js-result-ninety
+				h4 Estimate with 95% accuracy
+				.js-result-ninetyfive
+
 

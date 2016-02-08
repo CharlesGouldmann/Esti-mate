@@ -1,6 +1,6 @@
 
 // Accent Colors
-$color-primary:      #80c700;
+$color-primary:      #44b3f9;
 $color-secondary:    #f28100;
 $color-tertiary:     #b6451e;
 
@@ -15,9 +15,27 @@ $color-body:         darken($color-light, 2%);
 $color-border-light: darken($color-body, 10%);
 $color-border-dark:  darken($color-body, 25%);
 
+$color-border-highlight: #39C7ED;
+
 // Shadows
 $color-shadow-light: darken($color-body, 5%);
 $color-shadow-dark:  darken($color-body, 15%);
 
 // States / Alerts
-$color-error:        #ff6101;
+$color-error:        	#ff6101;
+$color-success:       #22A030;
+
+
+
+// --- Float Label -------------------------------------------------------------
+$color-float-text-highlighted:  #1AA1F8;
+$color-float-text:              #9F9F9F;
+$color-float-label:             #8D8C8C;
+$color-float-help-text:         #777777;
+$color-float-input-success:     #F6F7F1;
+$color-float-input-error:       #F4E8EE;
+
+
+// --- States ------------------------------------------------------------------
+$color-state-success:           #22A030;
+$color-state-error:             #932C56;
