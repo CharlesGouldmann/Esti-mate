@@ -1,0 +1,10 @@
+{
+  "name": "esti-mate",
+  "version": "0.0.1",
+  "dependencies": {
+    "modernizr": "^2.8.3",
+    "respond": "^1.4.2",
+    "jquery": "~2.1.4",
+    "fitvids": "~1.1.0"
+  }
+}
