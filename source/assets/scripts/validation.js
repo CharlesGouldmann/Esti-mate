@@ -1,10 +1,13 @@
 jQuery(document).ready(function($){
 
 
+jQuery.validator.addMethod("accept", function(value, element, param) {
+    return value.match(new RegExp("^" + param + "$"));
+	}, "Please insert a valid value");
+
+
 // ------------- Validate forms
 // ------------------------------------------------------------------
-
-
 
 
 	$('.js-base-validation').validate({
@@ -25,21 +28,21 @@ jQuery(document).ready(function($){
 		rules: {
 	    bestcase: {
 	      required: true,
-	      digits: true
+	      accept: "^[0-9]*([\. \,][0-9]{0,2})?$"
 	    },
 	    mostlikely: {
 	      required: true,
-	      digits: true
+	      accept: "^[0-9]*([\. \,][0-9]{0,2})?$"
 	    },
 	    worstcase: {
 	      required: true,
-	      digits: true
+	      accept: "^[0-9]*([\. \,][0-9]{0,2})?$"
 	    },
 	    deploys: {
-	      digits: true
+	      accept: "^[0-9]*([\. \,][0-9]{0,2})?$"
 	    },
 	    deployavg: {
-	      digits: true
+	      accept: "^[0-9]*([\. \,][0-9]{0,2})?$"
 	    }
 
 	  }, // end rules

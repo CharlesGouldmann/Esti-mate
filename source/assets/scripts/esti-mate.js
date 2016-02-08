@@ -5,13 +5,14 @@ jQuery('document').ready(function($){
 		var form = $('.js-esti-mate');
 
 		if($('.error', form).length === 0) {
+			consoleLog('all valid', 'message');
 			// Get values
 
-			var bestcase 		= parseFloat(form.find('[name="bestcase"]').val()),
-					mostlikely 	= parseFloat(form.find('[name="mostlikely"]').val()),
-					worstcase 	= parseFloat(form.find('[name="worstcase"]').val()),
-					deploys 		= parseFloat(form.find('[name="deploys"]').val()),
-					deployavg 	= parseFloat(form.find('[name="deployavg"]').val());
+			var bestcase 		= parseFloat(form.find('[name="bestcase"]').val().replace(',', '.')),
+					mostlikely 	= parseFloat(form.find('[name="mostlikely"]').val().replace(',', '.')),
+					worstcase 	= parseFloat(form.find('[name="worstcase"]').val().replace(',', '.')),
+					deploys 		= parseFloat(form.find('[name="deploys"]').val().replace(',', '.')),
+					deployavg 	= parseFloat(form.find('[name="deployavg"]').val().replace(',', '.'));
 
 			// Calculate estimates
 			var estimate 						= (bestcase + (4 * mostlikely) + worstcase)/6,
