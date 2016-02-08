@@ -261,6 +261,6 @@ gulp.task('heroku', ['build'], function() {
   var port = process.env.PORT || 3000;
 
   server.listen(port, function() {
-    console.log("Listening on " + port);
+    //console.log("Listening on " + port);
   });
 });
