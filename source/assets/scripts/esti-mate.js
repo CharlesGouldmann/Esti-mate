@@ -3,8 +3,10 @@ jQuery('document').ready(function($){
 	$('.js-esti-mate-submit').on('click', function() {
 
 		var form = $('.js-esti-mate');
+		var inputs = $('input', form).length;
 
-		if($('.error', form).length === 0) {
+
+		if($('input.valid', form).length === inputs) {
 			consoleLog('all valid', 'message');
 			// Get values
 
