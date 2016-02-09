@@ -17,11 +17,11 @@ jQuery('document').ready(function($){
 					deployavg 	= parseFloat(form.find('[name="deployavg"]').val().replace(',', '.'));
 
 					// basic validation for empty value
-					if(typeof deploys === 'NaN') {
+					if(isNaN(deploys)) {
 						deploys = 0;
 					}
-					
-					if (typeof deployavg === 'NaN') {
+
+					if (isNaN(deployavg)) {
 						deployavg = 0;
 					}
 
