@@ -54,6 +54,27 @@ jQuery.validator.addMethod("accept", function(value, element, param) {
 	});
 
 
+	$('.js-validate-convert').validate({
+		ignore: '.ignore',
+		debug: true,
+
+		rules: {
+	    hours: {
+	      accept: "^[0-9]*([\. \,][0-9]{0,2})?$"
+	    },
+	    minutes: {
+	      accept: "^[0-9]*([\. \,][0-9]{0,2})?$"
+	    }
+
+	  }, // end rules
+
+	  submitHandler: function(form) {
+	  	
+		}
+
+	});
+
+
 
 
 

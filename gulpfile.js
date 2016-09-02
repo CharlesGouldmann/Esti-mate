@@ -130,7 +130,7 @@ if(yarg.help) {
 gulp.task('css', function() {
   var FILES = SOURCE + STYLES + '*.scss';
   gulp.src(FILES)
-    .pipe(plumber(function () {
+    .pipe(plumber(function (error) {
         if(beepbeep) {
           beep();
         }

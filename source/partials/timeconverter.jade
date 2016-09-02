@@ -1,0 +1,17 @@
+.grid.size-6
+    .form-container
+        form.js-time-converter.js-validate-convert(name="convert-form")
+            .grid-group
+                .grid.size-12
+                    .float.js-float
+                        label.float__label Hours
+                        input.float__input(type="text" name="hours" placeholder="Hours" required)
+                .grid.size-12
+                    .float.js-float
+                        label.float__label Minutes
+                        input.float__input(type="text" name="minutes" placeholder="Minutes" required)
+                .grid.size-12
+                    button.button.button--primary.right.js-time-converter-submit Show me the decimal!
+.grid.size-6    
+    p Result in decimal:
+    .js-time-result

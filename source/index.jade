@@ -9,16 +9,16 @@ block content
 						.grid-group
 							.grid.size-12
 								.float.js-float
-									label.float__label Best-case estimate in hours
-									input.float__input(type="text" name="bestcase" placeholder="Best-case estimate in hours" required)
+									label.float__label Best-case estimate in hours (decimal)
+									input.float__input(type="text" name="bestcase" placeholder="Best-case estimate in hours (decimal)" required)
 							.grid.size-12
 								.float.js-float
-									label.float__label Most likely estimate in hours
-									input.float__input(type="text" name="mostlikely" placeholder="Most likely estimate in hours" required)
+									label.float__label Most likely estimate in hours (decimal)
+									input.float__input(type="text" name="mostlikely" placeholder="Most likely estimate in hours (decimal)" required)
 							.grid.size-12
 								.float.js-float
-									label.float__label Worst-case estimate in hours
-									input.float__input(type="text" name="worstcase" placeholder="Worst-case estimate in hours" required)
+									label.float__label Worst-case estimate in hours (decimal)
+									input.float__input(type="text" name="worstcase" placeholder="Worst-case estimate in hours (decimal)" required)
 							.grid.size-12
 								h4 Extra options
 								.float.js-float
@@ -26,8 +26,8 @@ block content
 									input.float__input(type="text" name="deploys" placeholder="Estimated amount of deploys (optional)")
 							.grid.size-12
 								.float.js-float
-									label.float__label Avarage deploy time (optional)
-									input.float__input(type="text" name="deployavg" placeholder="Avarage deploy time (optional)")
+									label.float__label Avarage deploy time in hours (optional)
+									input.float__input(type="text" name="deployavg" placeholder="Avarage deploy time in hours (optional)")
 							.grid.size-12
 								button.button.button--primary.right.js-esti-mate-submit Give it to me
 
@@ -38,5 +38,23 @@ block content
 				p.js-result-ninety
 				h4 Estimate with 95% accuracy:
 				p.js-result-ninetyfive
+			
+
+			.grid.size-12
+				h2 Hours in decimals cheatsheet
+				.grid-group
+					.grid.size-6.size-12--palm
+						p pick a value from the list
+						ul
+							li 1m: 0.0167
+							li 5m: 0.0833
+							li 10m: 0.1667
+							li 15m: 0.25
+							li 30: 0.5
+
+					.grid.size-6.size-12--palm
+						p ... or just use the converter
+						include partials/timeconverter
+
 
 
